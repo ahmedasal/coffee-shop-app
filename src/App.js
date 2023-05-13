@@ -1,25 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Menu from "./components/Menu";
+import {Outlet} from "react-router-dom";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <div className="container-fluid vh-100 text-white">
+            <div className="row  align-items-end bg-dark bg-gradient align-content-center " id='header'>
+                <div className="col-4 h3 m-1 text-white">
+                    <Header ></Header>
+                </div>
+            </div>
+            <div className="row main" >
+                <div className="col-3 bg-secondary bg-gradient " id='menu'>
+                    <Menu ></Menu>
+                </div>
+                <div className="col-9 text-black" id='content'>
+                    <Outlet/>
+                </div>
+            </div>
+            <div className="row  align-items-end bg-dark align-content-center " id='footer'>
+                <div className="col h3 m-1 fst-italic fw-lighter fs-5" >
+                    <Footer ></Footer>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
