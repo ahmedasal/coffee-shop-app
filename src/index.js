@@ -6,14 +6,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import {Content} from "./coffee/coffee.grid.component";
+import {Content, DefaultContent} from "./coffee/coffee.grid.component";
+import {AddCoffeeForm} from "./coffee/coffee.create.component";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<App/>}>
-                <Route path="content" element={<Content/>}/>
+                <Route path="content" element={<Content/>} />
+                <Route path="" element={<DefaultContent/>} />
             </Route>
         </Routes>
     </BrowserRouter>
